@@ -20,7 +20,7 @@
 
 body {
   font-family: "Montserrat", system-ui, sans-serif;
-  background: var(--bg);
+  background: #f2f2f2;
   color: var(--text);
   line-height: 1.6;
 }
@@ -41,12 +41,13 @@ img {
 }
 
 .container {
-  width: min(1080px, 92vw);
+  width: min(1120px, 92vw);
   margin: 0 auto;
 }
 
 .site-header {
-  padding: 26px 0;
+  padding: 24px 0;
+  background: var(--pink);
 }
 
 .header-inner {
@@ -98,12 +99,12 @@ img {
 
 .hero {
   background: var(--pink);
-  padding: 56px 0 64px;
+  padding: 40px 0 70px;
 }
 
 .hero-inner {
   display: grid;
-  gap: 36px;
+  gap: 34px;
 }
 
 .eyebrow {
@@ -116,9 +117,10 @@ img {
 
 .hero-copy h1 {
   font-family: "Playfair Display", serif;
-  font-size: clamp(28px, 7vw, 44px);
-  line-height: 1.08;
+  font-size: clamp(30px, 6.6vw, 46px);
+  line-height: 1.1;
   margin-bottom: 18px;
+  max-width: 440px;
 }
 
 .lead {
@@ -133,18 +135,18 @@ img {
 }
 
 .hero-visual img {
-  width: min(320px, 80vw);
-  filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.2));
+  width: min(420px, 60vw);
+  filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.22));
 }
 
 .feature {
-  padding: 46px 0 36px;
+  padding: 60px 0 50px;
   background: var(--white);
 }
 
 .feature-inner {
   display: grid;
-  gap: 26px;
+  gap: 32px;
 }
 
 .feature-media img {
@@ -159,14 +161,15 @@ img {
 }
 
 .gallery {
-  padding: 50px 0 66px;
+  padding: 60px 0 80px;
+  background: #f2f2f2;
 }
 
 .section-title {
   text-align: center;
   color: var(--accent);
   font-weight: 700;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .section-sub {
@@ -202,21 +205,27 @@ img {
 }
 
 .subscribe {
-  padding: 30px 0 50px;
+  padding: 26px 0 0;
+  position: relative;
+  z-index: 2;
 }
 
 .subscribe-inner {
   background: var(--dark);
   color: var(--white);
-  padding: 20px;
-  border-radius: 16px;
+  padding: 22px 26px;
+  border-radius: 22px;
   display: grid;
   gap: 16px;
   align-items: center;
+  transform: translateY(56px);
+  max-width: 860px;
+  margin: 0 auto;
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.18);
 }
 
 .subscribe-copy h3 {
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 6px;
 }
 
@@ -228,14 +237,15 @@ img {
 
 .subscribe-form input {
   border: none;
-  padding: 12px 14px;
+  padding: 12px 18px;
   border-radius: 999px;
   font-size: 14px;
 }
 
 .site-footer {
-  background: url("images/img_4.jpg") center/cover no-repeat;
-  padding: 46px 0 74px;
+  background: #f7dde0 url("images/up-cat.png") center bottom / cover no-repeat;
+  padding: 130px 0 70px;
+  min-height: 340px;
   position: relative;
 }
 
@@ -243,7 +253,7 @@ img {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.72);
 }
 
 .footer-inner {
@@ -253,6 +263,7 @@ img {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
+  padding-top: 16px;
 }
 
 .social {
@@ -312,13 +323,14 @@ img {
   }
 
   .hero-inner {
-    grid-template-columns: 1.1fr 0.9fr;
+    grid-template-columns: 1.2fr 0.8fr;
     align-items: center;
   }
 
   .feature-inner {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.1fr 0.9fr;
     align-items: center;
+    gap: 56px;
   }
 
   .card-grid {
