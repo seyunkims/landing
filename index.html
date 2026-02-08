@@ -16,7 +16,7 @@
             <a href="#" class="nav-link">About</a>
             <a href="#" class="nav-link">Support</a>
             <a href="#" class="nav-link">Contact</a>
-            <button class="btn btn-accent">Subscribe</button>
+            <button class="btn btn-accent js-open-modal">Subscribe</button>
           </nav>
         </div>
       </header>
@@ -31,7 +31,7 @@
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                 the industry's standard dummy text ever since the 1500s.
               </p>
-              <button class="btn btn-accent">Subscribe</button>
+              <button class="btn btn-accent js-open-modal">Subscribe</button>
             </div>
             <div class="hero-visual">
               <img src="images/box-cat.png" alt="Cat in a box" />
@@ -93,7 +93,7 @@
             </div>
             <form class="subscribe-form">
               <input type="email" placeholder="your@mail.com" aria-label="Email" />
-              <button class="btn btn-accent">Subscribe</button>
+              <button class="btn btn-accent js-open-modal" type="button">Subscribe</button>
             </form>
           </div>
         </section>
@@ -111,12 +111,37 @@
         </div>
       </footer>
 
-      <aside class="floating-modal">
+      <div class="overlay" hidden></div>
+      <aside class="floating-modal" hidden>
+        <button class="modal-close" aria-label="Close modal">×</button>
         <img src="images/cat-subscribe.png" alt="Cat" />
         <h4>Thank you!</h4>
         <p>Lorem Ipsum is simply dummy text of the printing industry.</p>
-        <button class="btn btn-accent">OK</button>
+        <button class="btn btn-accent js-close-modal">OK</button>
       </aside>
     </div>
+
+    <script>
+      const openButtons = document.querySelectorAll(".js-open-modal");
+      const closeButtons = document.querySelectorAll(".js-close-modal, .modal-close");
+      const overlay = document.querySelector(".overlay");
+      const modal = document.querySelector(".floating-modal");
+
+      const openModal = () => {
+        overlay.hidden = false;
+        modal.hidden = false;
+        document.body.classList.add("modal-open");
+      };
+
+      const closeModal = () => {
+        overlay.hidden = true;
+        modal.hidden = true;
+        document.body.classList.remove("modal-open");
+      };
+
+      openButtons.forEach((btn) => btn.addEventListener("click", openModal));
+      closeButtons.forEach((btn) => btn.addEventListener("click", closeModal));
+      overlay.addEventListener("click", closeModal);
+    </script>
   </body>
 </html>
